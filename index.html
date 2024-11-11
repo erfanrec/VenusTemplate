@@ -19,7 +19,7 @@
 
       localStorage.removeItem("authToken");
 
-      fetch('http://watchwithme.ir/api/v1/sub/auth', {
+      fetch('https://watchwithme.ir/api/v1/sub/auth', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +33,7 @@
 
           localStorage.setItem("authToken", token);
 
-          fetch(`http://watchwithme.ir/api/v1/sub/${license}`, {
+          fetch(`https://watchwithme.ir/api/v1/sub/${license}`, {
             headers: {
               "Authorization": `Bearer ${token}`
             }

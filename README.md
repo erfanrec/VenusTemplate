@@ -2,12 +2,12 @@
 
 ### مرزبان
 
-۱. **قالب رو با دستور زیر دانلود کنید**
+1. **قالب رو با دستور زیر دانلود کنید**
    ```sh
    sudo wget -N -P /var/lib/marzban/templates/subscription/ https://github.com/MR-MKZ/template-loader/releases/download/v1.0.0/index.html
    ```
 
-۲. **دستورات زیر رو تو ترمینال سرورتون بزنید**
+2. **دستورات زیر رو تو ترمینال سرورتون بزنید**
    ```sh
    echo 'CUSTOM_TEMPLATES_DIRECTORY="/var/lib/marzban/templates/"' | sudo tee -a /opt/marzban/.env
    echo 'SUBSCRIPTION_PAGE_TEMPLATE="subscription/index.html"' | sudo tee -a /opt/marzban/.env
@@ -18,7 +18,12 @@
    SUBSCRIPTION_PAGE_TEMPLATE="subscription/index.html"
    ```
 
-۳. **ریستارت کردن مرزبان**
+3. **توکن لایسنس خود را در فایل قرار دهید**
+   ```sh
+   nano /var/lib/marzban/templates/subscription/index.html
+   ```
+
+4. **ریستارت کردن مرزبان**
    ```sh
    marzban restart
    ```
