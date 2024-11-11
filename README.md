@@ -20,7 +20,7 @@
 
 3. **توکن لایسنس خود را در فایل قرار دهید**
    ```sh
-   nano /var/lib/marzban/templates/subscription/index.html
+   sudo nano /var/lib/marzban/templates/subscription/index.html
    ```
 
 4. **ریستارت کردن مرزبان**
