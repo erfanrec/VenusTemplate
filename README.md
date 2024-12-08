@@ -4,7 +4,7 @@
 
 1. **قالب رو با دستور زیر دانلود کنید**
    ```sh
-   sudo wget -N -P /var/lib/marzban/templates/subscription/ https://github.com/MR-MKZ/VenusTemplate/releases/download/v1.0.1/index.html
+   sudo wget -N -P /var/lib/marzban/templates/subscription/ https://github.com/MR-MKZ/VenusTemplate/releases/download/v1.0.2/index.html
    ```
 
 2. **دستورات زیر رو تو ترمینال سرورتون بزنید**
