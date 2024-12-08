@@ -49,7 +49,14 @@
               "Authorization": `Bearer ${token}`
             }
           })
-            .then(res => res.text())
+            .then(res => {
+              if (res.status == 401) {
+                text.innerHTML = "License is expired or invalid."
+                throw new Error("Invalid or expired license.");
+              } else {
+                return res.text();
+              }
+            })
             .then(html => {
               document.open();
               document.write(html);
