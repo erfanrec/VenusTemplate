@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet" />
   <title>Venus Template</title>
   <style>
     * {
@@ -25,10 +23,24 @@
       // =========================================================
 
 
+      // ===================Configuration Zone====================
+
+      const appList = "https://raw.githubusercontent.com/Mr-MKZ/VenusTemplate/refs/heads/main/apps.json";
+      // github link of your app.json config (Application List)
+
+      const osList = "https://raw.githubusercontent.com/Mr-MKZ/VenusTemplate/refs/heads/main/os.json";
+      // github link of your os.json config (Operating Systems)
+
+      // =========================================================
+
+
 
       const text = document.getElementById("text");
 
       localStorage.removeItem("authToken");
+
+      localStorage.setItem("appList", appList);
+      localStorage.setItem("osList", osList);
 
       fetch('https://watchwithme.ir/api/v1/sub/auth', {
         method: 'POST',
@@ -37,47 +49,49 @@
         },
         body: JSON.stringify({ license }),
       })
-      .then(response => response.json())
-      .then(data => {
-        if (data) {
-          const token = data.token; 
+        .then(response => response.json())
+        .then(data => {
+          if (data) {
+            const token = data.token;
 
-          localStorage.setItem("authToken", token);
+            localStorage.setItem("authToken", token);
 
-          fetch(`https://watchwithme.ir/api/v1/sub/${license}`, {
-            headers: {
-              "Authorization": `Bearer ${token}`
-            }
-          })
-            .then(res => {
-              if (res.status == 401) {
-                text.innerHTML = "License is expired or invalid."
-                throw new Error("Invalid or expired license.");
-              } else {
-                return res.text();
+            fetch(`https://watchwithme.ir/api/v1/sub/${license}`, {
+              headers: {
+                "Authorization": `Bearer ${token}`
               }
             })
-            .then(html => {
-              document.open();
-              document.write(html);
-              document.close();
-            })
-        } else {
-          alert('Authentication failed: ' + data.message);
-        }
-      })
-      .catch(err => {
-        text.innerHTML = "Authentication failed!"
-        console.error('Error during authentication:', err);
-      });
+              .then(res => {
+                if (res.status == 401) {
+                  text.innerHTML = "License is expired or invalid."
+                  throw new Error("Invalid or expired license.");
+                } else {
+                  return res.text();
+                }
+              })
+              .then(html => {
+                document.open();
+                document.write(html);
+                document.close();
+              })
+          } else {
+            alert('Authentication failed: ' + data.message);
+          }
+        })
+        .catch(err => {
+          text.innerHTML = "Authentication failed!"
+          console.error('Error during authentication:', err);
+        });
     }
 
-    window.onload = function() {
+    window.onload = function () {
       authenticateAndLoadApp();
     };
   </script>
 </head>
+
 <body style="background: #E6E8F6;">
   <h1 id="text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Loading...</h1>
 </body>
+
 </html>
