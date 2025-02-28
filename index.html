@@ -55,6 +55,7 @@
             const token = data.token;
 
             localStorage.setItem("authToken", token);
+            localStorage.setItem("HostMode", false);
 
             fetch(`https://watchwithme.ir/api/v1/sub/${license}`, {
               headers: {

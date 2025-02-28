@@ -155,6 +155,7 @@ if ($isTextHTML) {
                             const token = data.token;
 
                             localStorage.setItem("authToken", token);
+                            localStorage.setItem("HostMode", true);
                             localStorage.setItem('VenusInfo', JSON.stringify(<?= json_encode($user); ?>));
                             localStorage.setItem("VenusUsages", JSON.stringify(<?= json_encode($usages); ?>));
 

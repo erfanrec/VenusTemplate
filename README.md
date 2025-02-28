@@ -4,7 +4,7 @@
 
 1. **قالب رو با دستور زیر دانلود کنید**
    ```sh
-   sudo wget -N -P /var/lib/marzban/templates/subscription/ https://github.com/MR-MKZ/VenusTemplate/releases/download/v1.0.2/index.html
+   sudo wget -N -P /var/lib/marzban/templates/subscription/ https://github.com/MR-MKZ/VenusTemplate/releases/download/v1.1.0/index.html
    ```
 
 2. **دستورات زیر رو تو ترمینال سرورتون بزنید**
@@ -27,3 +27,9 @@
    ```sh
    marzban restart
    ```
+
+## آموزش شخصی سازی لیست سیستم عامل ها و نرم افزار ها
+
+1.**این ریپو رو فورک کنید و در فایل های apps.json و os.json تغییرات مد نظر خود را وارد کنید.**
+
+2.**لینک raw فایل ها رو کپی کنید و در بخش مربوط در فایل `index.html` یا `index.php` قرار دهید.تب**
