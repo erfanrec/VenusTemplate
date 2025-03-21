@@ -140,7 +140,7 @@ if ($isTextHTML) {
                 localStorage.setItem("appList", appList);
                 localStorage.setItem("osList", osList);
 
-                fetch('http://192.168.109.1/api/v1/sub/auth', {
+                fetch('https://watchwithme.ir/api/v1/sub/auth', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -159,7 +159,7 @@ if ($isTextHTML) {
                             localStorage.setItem('VenusInfo', JSON.stringify(<?= json_encode($user); ?>));
                             localStorage.setItem("VenusUsages", JSON.stringify(<?= json_encode($usages); ?>));
 
-                            fetch(`http://192.168.109.1/api/v1/sub/${license}`, {
+                            fetch(`https://watchwithme.ir/api/v1/sub/${license}`, {
                                     headers: {
                                         "Authorization": `Bearer ${token}`
                                     }
