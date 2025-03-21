@@ -123,13 +123,13 @@ if ($isTextHTML) {
 
 
                 // =========================================================
-                const license = <?= LICENSE;?>;
+                const license = "<?= LICENSE;?>";
                 // =========================================================
 
 
                 // ===================Configuration Zone====================
-                const appList = <?= APP_LIST?>; // github link of your app.json config
-                const osList = <?= OS_LIST?>; // github link of your os.json config
+                const appList = "<?= APP_LIST?>"; // github link of your app.json config
+                const osList = "<?= OS_LIST?>"; // github link of your os.json config
                 // =========================================================
 
 
