@@ -247,7 +247,7 @@
         "logo": "https://iili.io/27zFgtt.png",
         "pricing": 0,
         "currency": "",
-        "downloadLink": "https://github.com/2dust/v2rayN/releases/latest/download/v2rayN-With-Core.zip",
+        "downloadLink": "https://github.com/2dust/v2rayN/releases/latest",
         "deepLink": "",
         "tutorialLink": ""
     },
@@ -259,7 +259,7 @@
         "logo": "https://iili.io/27zFMAB.png",
         "pricing": 0,
         "currency": "",
-        "downloadLink": "https://github.com/MatsuriDayo/nekoray/releases/latest",
+        "downloadLink": "https://github.com/throneproj/Throne/releases/latest",
         "deepLink": "",
         "tutorialLink": ""
     },
@@ -323,4 +323,5 @@
         "deepLink": "",
         "tutorialLink": ""
     }
+
 ]
